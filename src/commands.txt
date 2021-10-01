@@ -1,0 +1,14 @@
+
+docker run -d -p 27017:27017 --name shopping-mongo mongo
+
+docker ps
+
+docker exec -it shopping-mongo /bin/bash
+
+mongo
+
+dbs
+
+use CatalogDb
+
+db.createCollection('Products')

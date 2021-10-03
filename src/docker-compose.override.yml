@@ -9,6 +9,13 @@ services:
     volumes: 
       - catalog_data:/data/db
 
+
+  basketdb:
+    container_name: basketdb
+    restart: always
+    ports:
+      - "6379:6379"
+
   catalog.api:
     container_name: catalog.api
     environment:
@@ -18,3 +25,14 @@ services:
       - "8000:80"
     depends_on: 
       - catalogdb
+
+  basket.api:
+    container_name: basket.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "CacheSettings:ConnectionString=basketdb:6379"
+    ports:
+      - "8001:80"
+    depends_on:
+      - basketdb
+

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\Basket\\Basket.API\\Basket.API.csproj": {}
+    "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\src\\Services\\Basket\\Basket.API\\Basket.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\Basket\\Basket.API\\Basket.API.csproj": {
+    "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\src\\Services\\Basket\\Basket.API\\Basket.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\Basket\\Basket.API\\Basket.API.csproj",
+        "projectUniqueName": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\src\\Services\\Basket\\Basket.API\\Basket.API.csproj",
         "projectName": "Basket.API",
-        "projectPath": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\Basket\\Basket.API\\Basket.API.csproj",
+        "projectPath": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\src\\Services\\Basket\\Basket.API\\Basket.API.csproj",
         "packagesPath": "C:\\Users\\majaham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\Basket\\Basket.API\\obj\\",
+        "outputPath": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\src\\Services\\Basket\\Basket.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -49,9 +49,9 @@
               "target": "Package",
               "version": "[5.0.1, )"
             },
-            "Newtonsoft.Json": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[1.10.14, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

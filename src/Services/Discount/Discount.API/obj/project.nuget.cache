@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "DCab/cx4k0P74hNplcpK1O7EKCn7pkc+ugpDp2cLM9PVbl3cJswyqG/N8gxXkeTZTD4U0ykLsjWpY4tlfBZJOg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\src\\Services\\Discount\\Discount.API\\Discount.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\majaham\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
+    "C:\\Users\\majaham\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\majaham\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\majaham\\.nuget\\packages\\npgsql\\5.0.10\\npgsql.5.0.10.nupkg.sha512",
+    "C:\\Users\\majaham\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\majaham\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\majaham\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\majaham\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "C:\\Users\\majaham\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

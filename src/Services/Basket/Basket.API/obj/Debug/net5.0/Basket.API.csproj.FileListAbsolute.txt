@@ -73,3 +73,10 @@ C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API
 C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\obj\Debug\net5.0\ref\Basket.API.dll
 C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\obj\Debug\net5.0\Basket.API.pdb
 C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\obj\Debug\net5.0\Basket.API.genruntimeconfig.cache
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\bin\Debug\net5.0\Grpc.AspNetCore.Server.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\bin\Debug\net5.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\bin\Debug\net5.0\Grpc.Core.Api.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\bin\Debug\net5.0\Grpc.Net.Client.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\bin\Debug\net5.0\Grpc.Net.ClientFactory.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\bin\Debug\net5.0\Grpc.Net.Common.dll

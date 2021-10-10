@@ -32,7 +32,9 @@ namespace Basket.API
             services.AddSingleton<IBasketRepository, BasketRepository>();
 
             services.AddGrpcClient<DiscountProtoServiceClient>(options =>
-               options.Address = new Uri("ConnectionStrings:DiscountServiceSettings"));
+            {
+                options.Address = new Uri(Configuration.GetConnectionString("DiscountServiceSettings"));
+            });
 
             services.AddScoped<DiscountGrpcService>();
 

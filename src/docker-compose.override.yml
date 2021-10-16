@@ -21,6 +21,8 @@ services:
     restart: always
     environment:
       - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=DiscountDb
     ports:
       - "5433:5432"
     volumes: 
@@ -51,8 +53,19 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "CacheSettings:ConnectionString=basketdb:6379"
+      - "ConnectionStrings:DiscountServiceSettings=http://discount.grpc:80"
     ports:
       - "8001:80"
     depends_on:
       - basketdb
+      - discount.grpc
 
+  discount.grpc:
+    container_name: discount.grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:DatabaseString=Server=discountdb;Port=5432;Database=DiscountDb;User Id=postgres;Password=password"
+    ports:
+      - "8003:80"
+    depends_on:
+      - discountdb

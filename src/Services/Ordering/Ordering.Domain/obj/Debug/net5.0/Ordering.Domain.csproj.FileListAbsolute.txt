@@ -1,0 +1,12 @@
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\bin\Debug\net5.0\Ordering.Domain.deps.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\bin\Debug\net5.0\Ordering.Domain.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\bin\Debug\net5.0\ref\Ordering.Domain.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\bin\Debug\net5.0\Ordering.Domain.pdb
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net5.0\Ordering.Domain.csproj.AssemblyReference.cache
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net5.0\Ordering.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net5.0\Ordering.Domain.AssemblyInfoInputs.cache
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net5.0\Ordering.Domain.AssemblyInfo.cs
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net5.0\Ordering.Domain.csproj.CoreCompileInputs.cache
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net5.0\Ordering.Domain.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net5.0\ref\Ordering.Domain.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.Domain\obj\Debug\net5.0\Ordering.Domain.pdb

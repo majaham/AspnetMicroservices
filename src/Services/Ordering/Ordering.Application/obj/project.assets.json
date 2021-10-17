@@ -326,6 +326,7 @@
     "net5.0": [
       "AutoMapper >= 10.1.1",
       "FluentValidation >= 10.3.3",
+      "MediatR >= 9.0.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 9.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 5.0.0",
       "Ordering.Domain >= 1.0.0"
@@ -387,6 +388,10 @@
           "FluentValidation": {
             "target": "Package",
             "version": "[10.3.3, )"
+          },
+          "MediatR": {
+            "target": "Package",
+            "version": "[9.0.0, )"
           },
           "MediatR.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "92lKYjJQ5q3PmElprYgnRDp8yopny84pwVuWpYxHNlrJsCtZk0+6ff7lyXs3B7GKhWSJUbAtmA+OS0mG5TNmZw==",
+  "dgSpecHash": "9ezT49TKp6rVbHmc/bXXnc1QfuD+Tyig7isdpCOhhtxYFkDyRdiEYWwoBlaiEXAWw92nsqwoSQxr9uaP7c3koQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
   "expectedPackageFiles": [

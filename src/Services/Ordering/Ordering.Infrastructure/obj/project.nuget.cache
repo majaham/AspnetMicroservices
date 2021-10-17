@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SvXp+aEpOjItoGW0A/kw9jhk1l/UPgmqHotudj+PQJK2FsQpxkSYpaxt6TwlFm/CsnawiUOnm8xXF9YIMSVsUg==",
+  "dgSpecHash": "WCDDDSnaKvTsTH2UWWnztK9Kjkb9mz77k/s3ECBRnJ+p93QAZJt4+F9t6L/bqP3v53GVfU7z0QVheE+pEdrQHQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\majaham\\source\\repos\\AspnetMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
   "expectedPackageFiles": [

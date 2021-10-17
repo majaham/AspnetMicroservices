@@ -30,7 +30,7 @@ namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
             if(orderToUpdate == null)
             {
                 _logger.LogError($"Order with Id: {orderToUpdate.Id} not found in the database");
-                throw new NotFoundException("Order", orderToUpdate.Id);
+                throw new NotFoundException(typeof(Order).Name, orderToUpdate.Id);
             }
             _mapper.Map(request, orderToUpdate, typeof(UpdateOrderCommand), typeof(Order));
 

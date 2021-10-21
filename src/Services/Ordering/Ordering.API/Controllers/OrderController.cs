@@ -24,7 +24,7 @@ namespace Ordering.API.Controllers
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [HttpGet("username:maxlength(50)", Name = "GetOrder")]
+        [HttpGet("{username:maxlength(50)}", Name = "GetOrder")]
         [ProducesResponseType(typeof(IEnumerable<OrderDto>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<OrderDto>>> GetOrderByUsername(string username)
         {
@@ -47,7 +47,7 @@ namespace Ordering.API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult> UpdateOrder([FromBody]UpdateOrderCommand updateOrder)
+        public async Task<ActionResult> UpdateOrder([FromBody] UpdateOrderCommand updateOrder)
         {
             await _mediator.Send(updateOrder);
 

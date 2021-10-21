@@ -73,3 +73,16 @@ C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering
 C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\obj\Debug\net5.0\Ordering.API.genruntimeconfig.cache
 C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\Humanizer.dll
 C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\Automatonymous.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\GreenPipes.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\MassTransit.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\MassTransit.AspNetCoreIntegration.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\MassTransit.RabbitMqTransport.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\NewId.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\System.Text.Json.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\EventBus.Messages.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\bin\Debug\net5.0\EventBus.Messages.pdb

@@ -1,0 +1,154 @@
+services:
+  basket.api:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\Dockerfile
+    container_name: basket.api
+    depends_on:
+      basketdb:
+        condition: service_started
+      discount.grpc:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CacheSettings:ConnectionString: basketdb:6379
+      ConnectionStrings:DiscountServiceSettings: http://discount.grpc:80
+    image: basketapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8001
+      protocol: tcp
+  basketdb:
+    container_name: basketdb
+    image: redis
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 6379
+      published: 6379
+      protocol: tcp
+    restart: always
+  catalog.api:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Catalog\Catalog.API\Dockerfile
+    container_name: catalog.api
+    depends_on:
+      catalogdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings:ConnectionString: mongodb://catalogdb:27017
+    image: catalogapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8000
+      protocol: tcp
+  catalogdb:
+    container_name: catalogdb
+    image: mongo
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 27017
+      published: 27017
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: catalog_data
+      target: /data/db
+      volume: {}
+  discount.grpc:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Discount\Discount.Grpc\Dockerfile
+    container_name: discount.grpc
+    depends_on:
+      discountdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings:DatabaseString: Server=discountdb;Port=5432;Database=DiscountDb;User
+        Id=postgres;Password=password
+    image: discountgrpc
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8003
+      protocol: tcp
+  discountdb:
+    container_name: discountdb
+    environment:
+      POSTGRES_DB: DiscountDb
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+    image: postgres
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 5432
+      published: 5433
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: postgres_data
+      target: /data/db
+      volume: {}
+  orderdb:
+    container_name: orderdb
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      SA_PASSWORD: Passw0rd1234
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: 1434
+      protocol: tcp
+    restart: always
+  ordering.api:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\Dockerfile
+    container_name: ordering.api
+    depends_on:
+      orderdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings:OrderConnectionString: Server=orderdb;Database=OrderDb;User
+        Id=sa;Password=Passw0rd1234
+    image: orderingapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8004
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose9908039451063707622_default
+volumes:
+  catalog_data:
+    name: dockercompose9908039451063707622_catalog_data
+  portainer_data:
+    name: dockercompose9908039451063707622_portainer_data
+  postgres_data:
+    name: dockercompose9908039451063707622_postgres_data

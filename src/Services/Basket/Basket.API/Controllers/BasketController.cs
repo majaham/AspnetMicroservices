@@ -72,13 +72,14 @@ namespace Basket.API.Controllers
         {
             //set basket by username
             var basket = await _basketRepository.GetBasket(basketCheckout.UserName);
+            basketCheckout.TotalPrice = basket.TotalPrice;
             if(basket == null)
             {
                 return BadRequest();
             }
             //set totalprice
             //publish event
-            var eventMessage = _mapper.Map<BasketCheckoutEvent>(basket);
+            var eventMessage = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
             await _publishEndpoint.Publish(eventMessage);
             //remove basketcheckout
             await _basketRepository.DeleteBasket(basketCheckout.UserName);

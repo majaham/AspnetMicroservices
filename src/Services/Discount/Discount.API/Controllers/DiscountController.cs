@@ -55,11 +55,11 @@ namespace Discount.API.Controllers
             return CreatedAtAction(nameof(GetDiscount), new { productname = discount.ProductName }, newDiscount);
         }
 
-        [HttpDelete("{productname}")]
+        [HttpDelete("{productName}")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.NoContent)]
-        public async Task<ActionResult<bool>> DeleteDiscount(string productname)
+        public async Task<ActionResult<bool>> DeleteDiscount(string productName)
         {
-           return await _repository.DeleteDiscount(productname);
+           return await _repository.DeleteDiscount(productName);
         }
     }
 }

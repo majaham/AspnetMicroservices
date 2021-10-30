@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Ordering.API/1.0.0": {
         "dependencies": {
+          "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "EventBus.Messages": "1.0.0",
           "MassTransit": "7.2.3",
@@ -40,7 +41,6 @@
           "MassTransit.RabbitMQ": "7.2.3",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.11",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.14.0",
-          "Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets": "1.1.0",
           "Ordering.Application": "1.0.0",
           "Ordering.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -876,11 +876,6 @@
         }
       },
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.14.0": {},
-      "Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets/1.1.0": {
-        "dependencies": {
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.14.0"
-        }
-      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -4014,13 +4009,6 @@
       "sha512": "sha512-yORzATlNmCp4kEwkxznLZ3maTaUJc5yTcu3aPufY8Tq4141/bRRWsa91u8I24MR3BTCCJlZO98xuQWB4arlKCw==",
       "path": "microsoft.visualstudio.azure.containers.tools.targets/1.14.0",
       "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
-    },
-    "Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets/1.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-e8UX59gP87Atju23R93cdqPwk8CW2zdmxOkfTtycjO7cxRmlF2D3OHOZMJDrccpsCwPrj9vTJPTBrqQMR97gRg==",
-      "path": "microsoft.visualstudio.azure.kubernetes.tools.targets/1.1.0",
-      "hashPath": "microsoft.visualstudio.azure.kubernetes.tools.targets.1.1.0.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",

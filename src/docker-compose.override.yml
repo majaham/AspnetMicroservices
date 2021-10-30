@@ -38,6 +38,12 @@ services:
     ports:
       - "1434:1433"
 
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "15673:15672" 
+      - "5673:5672"
   #portainer:
   #  container_name: portainer
   #  restart: always
@@ -64,11 +70,13 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "CacheSettings:ConnectionString=basketdb:6379"
       - "ConnectionStrings:DiscountServiceSettings=http://discount.grpc:80"
+      - "ConnectionStrings:EventBusAddress=amqp://guest:guest@rabbitmq:5672"
     ports:
       - "8001:80"
     depends_on:
       - basketdb
       - discount.grpc
+      - rabbitmq
 
   discount.grpc:
     container_name: discount.grpc
@@ -79,14 +87,38 @@ services:
       - "8003:80"
     depends_on:
       - discountdb
+   
+  discount.api:
+    container_name: discount.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:DatabaseString=Server=discountdb;Port=5432;Database=DiscountDb;User Id=postgres;Password=password"
+    ports:
+      - "8002:80"
+    depends_on:    
+      - discountdb
 
-  #ordering.api:
-  #  container_name: ordering.api
-  #  environment:
-  #    - ASPNETCORE_ENVIRONMENT=Development
-  #    - "ConnectionStrings:OrderConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=Passw0rd1234"
-  #  ports:
-  #    - "8004:80"
-  #  depends_on:
-  #    - orderdb
+  ordering.api:
+    container_name: ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:OrderConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=Passw0rd1234"
+      - "ConnectionStrings:EventBusAddress=amqp://guest:guest@rabbitmq:5672"
+    ports:
+      - "8004:80"
+    depends_on:
+      - orderdb
+      - rabbitmq
+
+  ocelotapigw:
+    container_name: ocelotapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8010:80"
+    depends_on:
+      - catalog.api
+      - basket.api
+      - discount.api
+      - ordering.api
 

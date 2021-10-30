@@ -1,0 +1,455 @@
+services:
+  basket.api:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API\Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Basket.API
+      target: base
+    container_name: basket.api
+    depends_on:
+      basketdb:
+        condition: service_started
+      discount.grpc:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      CacheSettings:ConnectionString: basketdb:6379
+      ConnectionStrings:DiscountServiceSettings: http://discount.grpc:80
+      ConnectionStrings:EventBusAddress: amqp://guest:guest@rabbitmq:5672
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: basketapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$(pidof
+        dotnet); then kill $PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8001
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Basket\Basket.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files (x86)\Microsoft\Xamarin\NuGet\
+      target: /root/.nuget/fallbackpackages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  basketdb:
+    container_name: basketdb
+    image: redis
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 6379
+      published: 6379
+      protocol: tcp
+    restart: always
+  catalog.api:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Catalog\Catalog.API\Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Catalog.API
+      target: base
+    container_name: catalog.api
+    depends_on:
+      catalogdb:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ConnectionStrings:ConnectionString: mongodb://catalogdb:27017
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: catalogapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$(pidof
+        dotnet); then kill $PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8000
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Catalog\Catalog.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files (x86)\Microsoft\Xamarin\NuGet\
+      target: /root/.nuget/fallbackpackages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  catalogdb:
+    container_name: catalogdb
+    image: mongo
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 27017
+      published: 27017
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: catalog_data
+      target: /data/db
+      volume: {}
+  discount.api:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Discount\Discount.API\Dockerfile
+    container_name: discount.api
+    depends_on:
+      discountdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings:DatabaseString: Server=discountdb;Port=5432;Database=DiscountDb;User
+        Id=postgres;Password=password
+    image: discountapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8002
+      protocol: tcp
+  discount.grpc:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Discount\Discount.Grpc\Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Discount.Grpc
+      target: base
+    container_name: discount.grpc
+    depends_on:
+      discountdb:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ConnectionStrings:DatabaseString: Server=discountdb;Port=5432;Database=DiscountDb;User
+        Id=postgres;Password=password
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: discountgrpc:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$(pidof
+        dotnet); then kill $PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8003
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Discount\Discount.Grpc
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files (x86)\Microsoft\Xamarin\NuGet\
+      target: /root/.nuget/fallbackpackages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  discountdb:
+    container_name: discountdb
+    environment:
+      POSTGRES_DB: DiscountDb
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+    image: postgres
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 5432
+      published: 5433
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: postgres_data
+      target: /data/db
+      volume: {}
+  ocelotapigw:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\ApiGateways\OcelotApiGw\Dockerfile
+    container_name: ocelotapigw
+    depends_on:
+      basket.api:
+        condition: service_started
+      catalog.api:
+        condition: service_started
+      discount.api:
+        condition: service_started
+      ordering.api:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: ocelotapigw
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8010
+      protocol: tcp
+  orderdb:
+    container_name: orderdb
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      SA_PASSWORD: Passw0rd1234
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: 1434
+      protocol: tcp
+    restart: always
+  ordering.api:
+    build:
+      context: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      dockerfile: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API\Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Ordering.API
+      target: base
+    container_name: ordering.api
+    depends_on:
+      orderdb:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ConnectionStrings:EventBusAddress: amqp://guest:guest@rabbitmq:5672
+      ConnectionStrings:OrderConnectionString: Server=orderdb;Database=OrderDb;User
+        Id=sa;Password=Passw0rd1234
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: orderingapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$(pidof
+        dotnet); then kill $PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8004
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\majaham\source\repos\AspnetMicroservices\src\Services\Ordering\Ordering.API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\source\repos\AspnetMicroservices\src
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files (x86)\Microsoft\Xamarin\NuGet\
+      target: /root/.nuget/fallbackpackages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\majaham\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 15672
+      published: 15673
+      protocol: tcp
+    - mode: ingress
+      target: 5672
+      published: 5673
+      protocol: tcp
+    restart: always
+networks:
+  default:
+    name: dockercompose9908039451063707622_default
+volumes:
+  catalog_data:
+    name: dockercompose9908039451063707622_catalog_data
+  portainer_data:
+    name: dockercompose9908039451063707622_portainer_data
+  postgres_data:
+    name: dockercompose9908039451063707622_postgres_data

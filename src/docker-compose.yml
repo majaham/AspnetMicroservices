@@ -13,6 +13,9 @@ services:
   orderdb:
     image: mcr.microsoft.com/mssql/server
 
+  rabbitmq:
+    image: rabbitmq:3-management
+
   #portainer:
   #  image: portainer/portainer-ce
 
@@ -34,11 +37,23 @@ services:
       context: .
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
 
-  #ordering.api:
-  #  image: ${DOCKER_REGISTRY-}orderingapi
-  #  build:
-  #    context: .
-  #    dockerfile: Services/Ordering/Ordering.API/Dockerfile
+  ordering.api:
+    image: ${DOCKER_REGISTRY-}orderingapi
+    build:
+      context: .
+      dockerfile: Services/Ordering/Ordering.API/Dockerfile 
+
+  discount.api:
+    image: ${DOCKER_REGISTRY-}discountapi
+    build:
+      context: .
+      dockerfile: Services/Discount/Discount.API/Dockerfile
+
+  ocelotapigw:
+    image: ${DOCKER_REGISTRY-}ocelotapigw
+    build:
+      context: .
+      dockerfile: ApiGateways/OcelotApiGw/Dockerfile
 
 volumes:
   catalog_data:

@@ -84,3 +84,24 @@ C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\EventBus.Message
 C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Ordering.Infrastructure.pdb
 C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Ordering.Application.pdb
 C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Ordering.Domain.pdb
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Discount.API.deps.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Discount.API.runtimeconfig.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Discount.API.runtimeconfig.dev.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Discount.API.exe
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\OcelotApiGw.deps.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\OcelotApiGw.runtimeconfig.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\OcelotApiGw.runtimeconfig.dev.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\ocelot - Copy.Development.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\ocelot.Development.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\ocelot.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\ocelot.Local.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\OcelotApiGw.exe
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Discount.API.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\OcelotApiGw.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Ocelot.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Microsoft.Extensions.DiagnosticAdapter.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Discount.API.pdb
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\OcelotApiGw.pdb

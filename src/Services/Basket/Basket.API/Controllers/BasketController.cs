@@ -37,10 +37,10 @@ namespace Basket.API.Controllers
         public async Task<ActionResult<ShoppingCart>> GetBasket(string username)
         {
             var basket = await _basketRepository.GetBasket(username);
-            if (basket == null)
+            
+            if (basket.ShoppingCartItems.Count == 0)
             {
-                _logger.LogError($"Basket for {username} not found");
-                return NotFound();
+                _logger.LogError($"Basket for {username} not found");               
             }
             return Ok(basket);
         }

@@ -20,7 +20,7 @@ namespace Basket.API.Repositories
             string shoppingCart = await _redisCache.GetStringAsync(username);
 
             if (string.IsNullOrEmpty(shoppingCart))
-                return null;
+                return new ShoppingCart{  Username = username};
             
             return JsonSerializer.Deserialize<ShoppingCart>(shoppingCart);
         }

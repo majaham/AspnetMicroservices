@@ -105,3 +105,9 @@ C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Microsoft.AspNet
 C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Discount.API.pdb
 C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\OcelotApiGw.pdb
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Shopping.Aggregator.deps.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Shopping.Aggregator.runtimeconfig.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Shopping.Aggregator.runtimeconfig.dev.json
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Shopping.Aggregator.exe
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Shopping.Aggregator.dll
+C:\Users\majaham\source\repos\AspnetMicroservices\src\bin\Debug\Shopping.Aggregator.pdb

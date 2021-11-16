@@ -21,13 +21,13 @@ using AspnetRunBasics;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\majaham\source\repos\AspnetMicroservices\src\WebApps\AspnetRunBasics\Pages\_ViewImports.cshtml"
-using AspnetRunBasics.Entities;
+using AspnetRunBasics.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c7b86f50b3512a7628296e14ff287002ee6f5bc6", @"/Pages/Contact.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24e7173edc2935479c2083bac8eedf6c2cbc617d", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d69c53c7b7ba494d406494af252068c16028c5f9", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Contact : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         #line hidden
@@ -91,7 +91,7 @@ using AspnetRunBasics.Entities;
                 </div>
                 <div class=""card-body"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7b86f50b3512a7628296e14ff287002ee6f5bc64500", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7b86f50b3512a7628296e14ff287002ee6f5bc64498", async() => {
                 WriteLiteral(@"
                         <div class=""form-group"">
                             <label for=""name"">Name</label>

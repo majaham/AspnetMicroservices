@@ -21,13 +21,13 @@ using AspnetRunBasics;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\majaham\source\repos\AspnetMicroservices\src\WebApps\AspnetRunBasics\Pages\_ViewImports.cshtml"
-using AspnetRunBasics.Entities;
+using AspnetRunBasics.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5f598fa7eeb4e9e404d55b4e855197fd1f447b93", @"/Pages/Shared/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24e7173edc2935479c2083bac8eedf6c2cbc617d", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d69c53c7b7ba494d406494af252068c16028c5f9", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/css/style.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -73,7 +73,7 @@ using AspnetRunBasics.Entities;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\n<html lang=\"en\">\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b938228", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b938226", async() => {
                 WriteLiteral("\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>");
 #nullable restore
 #line 6 "C:\Users\majaham\source\repos\AspnetMicroservices\src\WebApps\AspnetRunBasics\Pages\Shared\_Layout.cshtml"
@@ -89,7 +89,7 @@ using AspnetRunBasics.Entities;
     <link href=""//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"" rel=""stylesheet"" type=""text/css"">
     <link href=""//fonts.googleapis.com/css?family=Open+Sans:400,300,600"" rel=""stylesheet"" type=""text/css"">
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5f598fa7eeb4e9e404d55b4e855197fd1f447b939274", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5f598fa7eeb4e9e404d55b4e855197fd1f447b939272", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -117,9 +117,9 @@ using AspnetRunBasics.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9311242", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9311240", async() => {
                 WriteLiteral("\n    <header>\n\n        <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">\n            <div class=\"container\">\n                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9311639", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9311637", async() => {
                     WriteLiteral("AspnetRunBasics");
                 }
                 );
@@ -146,7 +146,7 @@ using AspnetRunBasics.Entities;
                     <ul class=""navbar-nav m-auto"">
                         <li class=""nav-item active"">
                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9313719", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9313717", async() => {
                     WriteLiteral("Home <span class=\"sr-only\">(current)</span>");
                 }
                 );
@@ -165,7 +165,7 @@ using AspnetRunBasics.Entities;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"nav-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9315377", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9315375", async() => {
                     WriteLiteral("Product");
                 }
                 );
@@ -184,7 +184,7 @@ using AspnetRunBasics.Entities;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>                        \n                        <li class=\"nav-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9317021", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9317019", async() => {
                     WriteLiteral("Cart");
                 }
                 );
@@ -203,7 +203,7 @@ using AspnetRunBasics.Entities;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"nav-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9318638", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9318636", async() => {
                     WriteLiteral("Order");
                 }
                 );
@@ -222,7 +222,7 @@ using AspnetRunBasics.Entities;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                        <li class=\"nav-item\">\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9320256", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9320254", async() => {
                     WriteLiteral("Contact");
                 }
                 );
@@ -241,7 +241,7 @@ using AspnetRunBasics.Entities;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n                        </li>\n                    </ul>\n\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9321850", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9321848", async() => {
                     WriteLiteral(@"
                         <div class=""input-group input-group-sm"">
                             <input type=""text"" class=""form-control"" placeholder=""Search..."">
@@ -252,7 +252,7 @@ using AspnetRunBasics.Entities;
                             </div>
                         </div>
                         ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9322639", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f598fa7eeb4e9e404d55b4e855197fd1f447b9322637", async() => {
                         WriteLiteral("\n                            <i class=\"fa fa-shopping-cart\"></i> Cart\n                            <span class=\"badge badge-light\">3</span>\n                        ");
                     }
                     );

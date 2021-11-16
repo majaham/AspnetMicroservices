@@ -21,13 +21,13 @@ using AspnetRunBasics;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\majaham\source\repos\AspnetMicroservices\src\WebApps\AspnetRunBasics\Pages\_ViewImports.cshtml"
-using AspnetRunBasics.Entities;
+using AspnetRunBasics.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"25efdd3eb6fd85a8bb2b3f5340d4d4e95944493b", @"/Pages/Confirmation.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24e7173edc2935479c2083bac8eedf6c2cbc617d", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d69c53c7b7ba494d406494af252068c16028c5f9", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Confirmation : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         #pragma warning disable 1998

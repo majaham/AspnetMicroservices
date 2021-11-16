@@ -1,33 +1,42 @@
-﻿using System;
-using System.Threading.Tasks;
-using AspnetRunBasics.Entities;
-using AspnetRunBasics.Repositories;
+﻿using AspnetRunBasics.Models;
+using AspnetRunBasics.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AspnetRunBasics
 {
     public class CartModel : PageModel
     {
-        private readonly ICartRepository _cartRepository;
+        private readonly IBasketService _basketService;
+        private readonly ILogger<CartModel> _logger;
 
-        public CartModel(ICartRepository cartRepository)
+        public BasketModel Cart { get; set; } = new BasketModel();
+
+        public CartModel(IBasketService basketService, ILogger<CartModel> logger)
         {
-            _cartRepository = cartRepository ?? throw new ArgumentNullException(nameof(cartRepository));
+            _basketService = basketService ?? throw new ArgumentNullException(nameof(basketService));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
-
-        public Entities.Cart Cart { get; set; } = new Entities.Cart();        
 
         public async Task<IActionResult> OnGetAsync()
         {
-            Cart = await _cartRepository.GetCartByUserName("test");            
+            Cart = await _basketService.GetBasket("jahohm");
 
             return Page();
         }
 
-        public async Task<IActionResult> OnPostRemoveToCartAsync(int cartId, int cartItemId)
+        public async Task<IActionResult> OnPostRemoveFromCartAsync(string cartItemId)
         {
-            await _cartRepository.RemoveItem(cartId, cartItemId);
+            var basket = await _basketService.GetBasket("jahohm");
+            var basketItem = basket.ShoppingCartItems.FirstOrDefault(p => p.ProductId == cartItemId);
+            basket.ShoppingCartItems.Remove(basketItem);
+            Cart = basket;
+            await _basketService.UpdateBasket(basket);
+
             return RedirectToPage();
         }
     }

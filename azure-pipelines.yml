@@ -20,7 +20,7 @@ steps:
     #azureContainerRegistry: $(azureContainerRegistry)
     azureContainerRegistry: '{"loginServer":"appregistryjahohm.azurecr.io", "id" : "/subscriptions/2bb57cf8-9700-460e-8cb9-034c7126e491/resourceGroups/developerRG/providers/Microsoft.ContainerRegistry/registries/appregistryjahohm"}'
     dockerComposeFile: '**/docker-compose.yml'
-    additionalDockerComposeFiles: 'docker-compose.override.yml'
+    additionalDockerComposeFiles: './docker-compose.override.yml'
     action: 'Build services'
     includeLatestTag: true
     
@@ -30,5 +30,5 @@ steps:
     azureSubscription: 'ACRServiceConnection'
     azureContainerRegistry: '{"loginServer":"appregistryjahohm.azurecr.io", "id" : "/subscriptions/2bb57cf8-9700-460e-8cb9-034c7126e491/resourceGroups/developerRG/providers/Microsoft.ContainerRegistry/registries/appregistryjahohm"}'
     dockerComposeFile: '**/docker-compose.yml'
-    additionalDockerComposeFiles: 'docker-compose.override.yml'
+    additionalDockerComposeFiles: './docker-compose.override.yml'
     action: 'Push services'
